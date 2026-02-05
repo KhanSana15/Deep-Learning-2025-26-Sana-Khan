@@ -1,44 +1,35 @@
 # Deep Learning 2025-26 - Sana Khan
-> A professional collection of Deep Learning implementations, architectures, and data engineering labs.
+# 29Jan Datasets Upload Methods
+
+**Project Description**
+This notebook demonstrates four distinct methods for Data Ingestion in a Google Colab environment. The goal was to test different pipelines for loading `.csv` data into Pandas DataFrames for Deep Learning tasks.
+
+**Dependencies**
+* Python 3.x
+* Pandas
+* Kagglehub
+* Google Colab (Drive mounting)
 
 ---
 
-## 📂 Repository Overview
-This repository serves as a centralized hub for my progress in Deep Learning, transitioning from fundamental computer vision tasks to advanced data pipeline optimizations.
+### Implementation Details
 
-### 🚀 Projects
+**Method 1: Local Sample Data**
+* Loaded the pre-existing MNIST digit dataset provided by the Colab runtime environment.
+* Used standard `pd.read_csv()` for local path access.
 
-#### 1. MNIST Digit Recognition using CNN
-A standard implementation for recognizing handwritten digits using a Convolutional Neural Network.
-* **Key Features:** Custom CNN architecture, Data normalization, and Performance visualization.
-* **Accuracy:** 99.30%
-* **[View Project Folder](./mnist_digit_recognition_cnn_deep_learning.ipynb)**
+**Method 2: Kaggle API (Small Dataset)**
+* Utilized the `kagglehub` library to fetch the **Iris Species** dataset directly from Kaggle.
+* Automated the file path retrieval to handle dynamic download locations.
 
-#### 2. Data Ingestion Lab
-A technical experiment exploring four distinct methodologies for importing datasets into Google Colaboratory.
-* **Methods:** Local Upload, KaggleHub API, GDrive Mounting, and Linux `wget`.
-* **Focus:** Speed, persistence, and workflow automation.
-* **[View Project Folder](./Data-Ingestion-Lab/)**
+**Method 3: Cloud Storage Integration (Google Drive)**
+* Mounted Google Drive to the runtime (`/content/drive`).
+* Accessed a custom dataset (`mnist_train_small.csv`) stored in a private Drive folder, simulating a real-world workflow where data is stored securely on the cloud.
 
----
+**Method 4: Large Dataset Retrieval**
+* Downloaded the **Credit Card Fraud Detection** dataset using `kagglehub`.
+* Verified directory contents using `os.listdir()` to ensure correct file targeting before loading.
 
-## 🛠️ Technologies Used
-* **Python 3.x** | **TensorFlow & Keras**
-* **Kaggle API** for data sourcing
-* **Pandas** for data verification
-* **Google Colab** environment
-
----
-
-## 🔗 File Structure
-```text
-Deep-Learning-2025-26-Sana-Khan/
-├── README.md                                          # Repository Directory
-├── mnist_digit_recognition_cnn_deep_learning.ipynb   # Project 1
-└── Data-Ingestion-Lab/                                # Project 2
-    ├── Data_Loading_Methods.ipynb                     # Lab Notebook
-    └── README.md                                      # Project Documentation
-```
 ---
 ## 👩‍💻 Author
 Sana Khan
